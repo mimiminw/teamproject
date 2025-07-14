@@ -1,0 +1,6 @@
+streamlit
+pybullet
+plotly
+scikit-learn
+joblib
+numpy
