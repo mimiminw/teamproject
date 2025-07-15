@@ -1,6 +1,4 @@
-streamlit
-pybullet
-plotly
-scikit-learn
-joblib
-numpy
+streamlit>=1.30
+pybullet>=3.2
+plotly>=5.20
+numpy>=1.24
