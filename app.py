@@ -1,4 +1,3 @@
-
 import streamlit as st
 import pybullet as p
 import pybullet_data
@@ -39,13 +38,18 @@ def plot_shape(shape='cube'):
     fig = go.Figure()
 
     if shape == "cube":
+        # 정육면체 꼭짓점
+        x = [0,1,1,0,0,1,1,0]
+        y = [0,0,1,1,0,0,1,1]
+        z = [0,0,0,0,1,1,1,1]
+        # Mesh3d는 삼각형 면을 i,j,k로 지정 (0-based vertex 인덱스)
+        i = [0,0,0,1,1,2,4,5,6,7,7,3]
+        j = [1,2,3,5,6,3,5,6,7,4,3,2]
+        k = [2,3,1,6,7,0,6,7,4,0,0,1]
+
         fig.add_trace(go.Mesh3d(
-            x=[0,1,1,0,0,1,1,0],
-            y=[0,0,1,1,0,0,1,1],
-            z=[0,0,0,0,1,1,1,1],
-            i=[0,0,0,1,1,2,3,4,4,5,6,7],
-            j=[1,2,4,3,5,3,0,5,6,6,7,6],
-            k=[2,4,5,2,6,0,1,6,7,7,4,5],
+            x=x, y=y, z=z,
+            i=i, j=j, k=k,
             color='skyblue',
             opacity=0.5
         ))
